@@ -8,10 +8,18 @@
     box-sizing: border-box;
 }
 
+html,body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .container{
-    width: 100;
-    height: 100vh; /* vh 와 % 단위가 다르다 확인 할 것! */
+    height: auto; /* vh 와 % 단위가 다르다 확인 할 것! */
     background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/room.jpg);
+    min-height: 100%;
+    padding-bottom: 100px;
 }
 
 .container .header{
@@ -152,7 +160,7 @@
 }
 
 #card-pick{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 .container .card_container .cardBox img {
     max-width: 100%;
@@ -203,5 +211,102 @@
     border-radius: 50%;
     z-index:2;
     cursor:pointer;
+
+}
+
+.galleryList {
+    max-width: 1200px;
+    width: 100%;
+    margin:0 auto;
+}
+
+.galleryList ul {
+    font-size: 0;
+}
+
+.galleryList ul > li{
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+}
+
+.galleryList ul > li > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.galleryList ul > li > a .screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.galleryList ul > li > a .screen::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    opacity: 0;
+    transition: all .35s;
+}
+
+.galleryList ul > li > a .screen .top {
+    position: absolute;
+    bottom: 150%;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 900;
+    transition:all .35s;
+}
+
+.galleryList ul > li > a .screen .bottom {
+    position: absolute;
+    bottom: 150%;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+    font-size: 12px;
+    transition:all .35s;
+}
+
+.galleryList ul > li > a .screen img {
+    width:100%;
+}
+
+.galleryList ul > li > a h3 {
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    color:#666;
+}
+
+.galleryList ul> li > a:hover .screen::after {
+    opacity: 1;
+}
+
+.galleryList ul> li > a:hover .top {
+    bottom:52%;
+}
+
+.galleryList ul> li > a:hover .bottom {
+    top:52%;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    padding: 100px 0;
+    background: red;
+    /* color: #fff;
+    position: relative; */
+
 
 }
