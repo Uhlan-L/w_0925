@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>로그인</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+<body>
+    <section class="login-form">
+        <hi>LOGIN PAGE</hi>
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label form="id">USER ID</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label form="pw">PASSWORD</label>
+            </div>
+            <div class="btn-area">
+                <button type="submit">LOGIN</button>
+            </div>
+        </form>
+        <div class="caption">
+            <a href="">Forget Password?</a>
+        </div>
+    </section>
+</body>
+
+<script>
+    let id      = $('#id');
+    let pw      = $('#pw');
+    let btn     = $('#btn');
+
+    $(btn).on('click', function() {
+        if($(id).val() == "") {
+            $(id).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning')
+            },1500);
+        } else if ($(pw).val() == "") {
+            $(pw).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning')
+            },1500);
+        }
+    })
+</script>

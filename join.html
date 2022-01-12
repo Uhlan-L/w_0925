@@ -8,40 +8,71 @@
     <link rel="stylesheet" href="style_join.css">
 </head>
 <body>
-    <section class="login-form">
-        <hi>LOGO DESIGN</hi>
+    <section class="join-form">
+        <hi>JOIN PAGE</hi>
         <form action="">
             <div class="int-area">
                 <input type="text" name="id" id="id" autocomplete="off" required>
-                <label form="id">USER NAME</label>
+                <label form="name">아이디</label>
+            </div>
+            <div class="int-area">
+                <input type="text" name="email" id="email" autocomplete="off" required>
+                <label form="email">이메일</label>
+            </div>
+            <div class="int-area-divide">
+                <input type="text" name="phone" id="phone" autocomplete="off" required>
+                <label form="phone">휴대전화</label>
+                <button type="phone_chk">인증번호전송</button>
             </div>
             <div class="int-area">
                 <input type="password" name="pw" id="pw" autocomplete="off" required>
-                <label form="pw">PASSWORD</label>
+                <label form="pw">비밀번호</label> 
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw_chk" id="pw_chk" autocomplete="off" required>
+                <label form="pw_chk">비밀번호확인</label>
             </div>
             <div class="btn-area">
-                <button type="submit">LOGIN</button>
+                <button type="submit" name="submit" id="submit" autocomplete="off">회원가입</button>
             </div>
         </form>
-        <div class="caption">
-            <a href="">Forget Password?</a>
+        <div class="back_page">
+            <a href="">뒤로가기</a>
         </div>
     </section>
 </body>
 
 <script>
-    let id = $({'#id'});
-    let pw = $({'#pw'});
-    let btn = $({'#btn'});
+    let id      = $('#id');
+    let email   = $('#email');
+    let phone   = $('#phone');
+    let pw      = $('#pw');
+    let pw_chk  = $('#pw_chk');
+    let submit  = $('#submit');
 
-    $(btn).on('click', function() {
+    $(submit).on('click', function() {
         if($(id).val() == "") {
             $(id).next('label').addClass('warning');
             setTimeout(function() {
                 $('label').removeClass('warning')
             },1500);
+        } else if ($(email).val() == "") {
+            $(email).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning')
+            },1500);
+        } else if ($(phone).val() == "") {
+            $(phone).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning')
+            },1500);
         } else if ($(pw).val() == "") {
             $(pw).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning')
+            },1500);
+        } else if ($(pw_chk).val() == "") {
+            $(pw_chk).next('label').addClass('warning');
             setTimeout(function() {
                 $('label').removeClass('warning')
             },1500);
